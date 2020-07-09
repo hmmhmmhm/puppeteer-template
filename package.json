@@ -19,8 +19,8 @@
     "cloudscraper": "^4.6.0",
     "folder-logger": "^1.0.9",
     "puppeteer": "^5.0.0",
-    "puppeteer-extra": "^3.1.11",
-    "puppeteer-extra-plugin-stealth": "^2.4.11",
+    "puppeteer-extra": "^3.1.12",
+    "puppeteer-extra-plugin-stealth": "^2.4.12",
     "request": "^2.88.2"
   },
   "devDependencies": {

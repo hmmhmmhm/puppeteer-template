@@ -2,8 +2,6 @@ import puppeteer from 'puppeteer'
 import puppeteerExtra from 'puppeteer-extra'
 import stealthPlugin from 'puppeteer-extra-plugin-stealth'
 import cloudscraper from 'cloudscraper'
-let scraper: any = cloudscraper
-
 import { Logger } from './'
 
 /**
@@ -82,9 +80,11 @@ export const goto = async (
     options: {
         waitUntil: string[],
         isDebug: boolean,
+        timeout: number,
     } = {
             waitUntil: ['load', 'networkidle0'],
             isDebug: false,
+            timeout: 1,
         },
 ) => {
     try {
@@ -98,7 +98,7 @@ export const goto = async (
         await page.goto(targetUrl, {
             // @ts-ignore
             waitUntil: options.waitUntil,
-            timeout: 1,
+            timeout: options.timeout,
 
         })
 
@@ -120,7 +120,8 @@ export const goto = async (
  */
 export const getImitationCookie = (url) => {
     return new Promise((resolve, reject) =>
-        scraper.get(url, (error, response, body) => {
+        // @ts-ignore
+        cloudscraper.get(url, (error, response, body) => {
             if (error) {
                 reject(error)
             } else {
