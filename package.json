@@ -1,0 +1,31 @@
+{
+  "name": "typescript-template",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "production-build": "tsc",
+    "production-start": "tsc && node dist/index.js",
+    "clean": "rm -rf ./dist/*.* && rm -rf ./tmp",
+    "lint": "prettier --write ./src/**/*.{ts}"
+  },
+  "main": "./dist/index.js",
+  "type": "./dist/index.d.ts",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/puppeteer": "^3.0.1",
+    "cloudscraper": "^4.6.0",
+    "folder-logger": "^1.0.9",
+    "puppeteer": "^5.0.0",
+    "puppeteer-extra": "^3.1.11",
+    "puppeteer-extra-plugin-stealth": "^2.4.11",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.20",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.6"
+  }
+}
